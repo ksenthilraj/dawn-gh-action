@@ -1,0 +1,15 @@
+name: Dawn Action workflow
+
+on: [push]
+
+jobs:
+  run-github-dawnactions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dawn js Action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Dawn Senthilraj
+      - name: Log Greeting time
+        run: echo "${{steps.greet.outputs.time}}"
